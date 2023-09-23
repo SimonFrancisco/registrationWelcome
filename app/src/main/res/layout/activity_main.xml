@@ -11,13 +11,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#F3000000"/>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="0dp">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
 
             <TextView
@@ -26,9 +30,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="68dp"
                 android:fontFamily="@font/acme"
-                android:text="Welcome!"
+                android:text="@string/welcome"
                 android:textColor="@color/white"
-                android:textSize="40dp"
+                android:textSize="40sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
@@ -43,14 +47,15 @@
                 android:layout_marginTop="52dp"
                 android:layout_marginEnd="24dp"
                 android:background="@drawable/input_background"
-                android:drawableLeft="@drawable/baseline_person_24"
+                android:drawableStart="@drawable/baseline_person_24"
                 android:drawablePadding="10dp"
                 android:ems="10"
-                android:hint="Name"
-                android:inputType="textPersonName"
-                android:paddingLeft="20dp"
+                android:hint="@string/name"
+                android:autofillHints="name"
+                android:inputType="textCapSentences"
+                android:paddingStart="13dp"
                 android:paddingTop="13dp"
-                android:paddingRight="20dp"
+                android:paddingEnd="20dp"
                 android:paddingBottom="13dp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
@@ -65,17 +70,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/input_background"
-                android:ems="10"
-                android:hint="Surname"
-                android:drawableLeft="@drawable/baseline_person_24"
+                android:drawableStart="@drawable/baseline_person_24"
                 android:drawablePadding="10dp"
-                android:inputType="textPersonName"
-                android:paddingLeft="20dp"
+                android:ems="10"
+                android:hint="@string/surname"
+                android:inputType="textCapSentences"
+                android:paddingStart="13dp"
                 android:paddingTop="13dp"
-                android:paddingRight="20dp"
+                android:paddingEnd="20dp"
                 android:paddingBottom="13dp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
+
                 app:layout_constraintEnd_toEndOf="@+id/inputName"
                 app:layout_constraintStart_toStartOf="@+id/inputName"
                 app:layout_constraintTop_toBottomOf="@+id/inputName" />
@@ -86,14 +92,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/input_background"
-                android:ems="10"
-                android:hint="Date of birth"
-                android:drawableLeft="@drawable/baseline_calendar_month_24"
+                android:drawableStart="@drawable/baseline_calendar_month_24"
                 android:drawablePadding="10dp"
-                android:inputType="date"
-                android:paddingLeft="20dp"
+                android:ems="10"
+                android:hint="@string/date_of_birth"
+                android:paddingStart="13dp"
                 android:paddingTop="13dp"
-                android:paddingRight="20dp"
+                android:paddingEnd="20dp"
                 android:paddingBottom="13dp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
@@ -101,61 +106,77 @@
                 app:layout_constraintStart_toStartOf="@+id/inputSurname"
                 app:layout_constraintTop_toBottomOf="@+id/inputSurname" />
 
-            <EditText
-                android:id="@+id/inputPassword"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/input_background"
-                android:ems="10"
-                android:hint="Password"
-                android:drawableLeft="@drawable/baseline_lock_24"
-                android:drawablePadding="10dp"
-                android:inputType="textPassword"
-                android:paddingLeft="20dp"
-                android:paddingTop="13dp"
-                android:paddingRight="20dp"
-                android:paddingBottom="13dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                app:layout_constraintEnd_toEndOf="@+id/inputBirthday"
-                app:layout_constraintStart_toStartOf="@+id/inputBirthday"
-                app:layout_constraintTop_toBottomOf="@+id/inputBirthday" />
-
-            <EditText
-                android:id="@+id/inputConPassw"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/input_background"
-                android:ems="10"
-                android:hint="Confirm password"
-                android:drawableLeft="@drawable/baseline_lock_24"
-                android:drawablePadding="10dp"
-                android:inputType="textPassword"
-                android:paddingLeft="20dp"
-                android:paddingTop="13dp"
-                android:paddingRight="20dp"
-                android:paddingBottom="13dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                app:layout_constraintEnd_toEndOf="@+id/inputPassword"
-                app:layout_constraintStart_toStartOf="@+id/inputPassword"
-                app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
-
             <Button
                 android:id="@+id/buttonRegister"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/input_background"
-                android:text="Register"
+                android:text="@string/register"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/inputConPassw"
+                app:layout_constraintEnd_toEndOf="@+id/inputConPasswordLayout"
+                app:layout_constraintStart_toStartOf="@+id/inputConPasswordLayout"
+                app:layout_constraintTop_toBottomOf="@+id/inputConPasswordLayout" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputPasswordLayout"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                app:endIconMode="password_toggle"
+                app:endIconTint="@color/white"
+                app:hintAnimationEnabled="false"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toEndOf="@+id/inputBirthday"
+                app:layout_constraintStart_toStartOf="@+id/inputBirthday"
+                app:layout_constraintTop_toBottomOf="@+id/inputBirthday"
+                app:startIconDrawable="@drawable/baseline_lock_24"
+                app:startIconTint="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputPasswordText"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/input_background"
+                    android:hint="@string/password"
+                    android:inputType="textCapSentences"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputConPasswordLayout"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="8dp"
+                android:textColorHint="@color/white"
+                app:endIconMode="password_toggle"
+                app:endIconTint="@color/white"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toEndOf="@+id/inputPasswordLayout"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/inputConPassw"
-                app:layout_constraintTop_toBottomOf="@+id/inputConPassw" />
+                app:layout_constraintStart_toStartOf="@+id/inputPasswordLayout"
+                app:layout_constraintTop_toBottomOf="@+id/inputPasswordLayout"
+                app:startIconDrawable="@drawable/baseline_lock_24"
+                app:startIconTint="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputConPasswordText"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/input_background"
+                    android:hint="@string/confirm_password"
+                    android:inputType="textCapSentences"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
