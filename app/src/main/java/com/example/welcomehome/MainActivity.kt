@@ -2,13 +2,11 @@ package com.example.welcomehome
 
 import android.app.DatePickerDialog
 import android.content.Intent
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
-import androidx.annotation.RequiresApi
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import java.util.Calendar
@@ -25,7 +23,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var inputPasswordLayout : TextInputLayout
     private lateinit var inputConfPasswordLayout : TextInputLayout
 
-    @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -64,6 +61,7 @@ class MainActivity : AppCompatActivity() {
             )
             dialogDatePicker.show()
         }
+
     // Calling second screen
 
         register = findViewById(R.id.buttonRegister)
@@ -71,17 +69,23 @@ class MainActivity : AppCompatActivity() {
             val check: Boolean = validate()
             if(check){
                 val intent = Intent(this,GreetingsActivity::class.java)
+        //Sending name
+                intent.putExtra("name","Welcome "+inputName.text.toString()
+                        + ", we are happy to have you here with us!")
+        //
                 startActivity(intent)
             }
             else{
                 return@setOnClickListener
+
             }
         }
+
 
     }
 
     private fun validate(): Boolean {
-        val name: String = inputName.text.toString()
+        val name = inputName.text.toString()
         val surname: String = inputSurname.text.toString()
         val birthday: String = inputBirthday.text.toString()
         val password: String = inputPasswordText.text.toString()
@@ -130,6 +134,11 @@ class MainActivity : AppCompatActivity() {
         input.requestFocus()
 
     }
+
+
+
+
+
 
 
 }
