@@ -11,7 +11,6 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 class GreetingsActivity : AppCompatActivity()  {
     //creating variables for window
 
-    private lateinit var inputName : EditText
     private lateinit var buttonHello: Button
     private lateinit var sayHello: TextView
 
