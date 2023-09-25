@@ -32,7 +32,7 @@ class GreetingsActivity : AppCompatActivity()  {
     //Locating element in another Layout
             val view = layoutInflater.inflate(R.layout.bottom_sheet_dialog,null)
             sayHello = view.findViewById(R.id.sayHello)
-    //Getting name form MainActivity
+    //Getting name from MainActivity
             sayHello.text = intent.getStringExtra("name")
             dialog.setContentView(view)
             dialog.show()
